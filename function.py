@@ -1,3 +1,6 @@
+import operator
+
+
 def most_frequent(string):
     D=dict()
     for i in string:
@@ -6,5 +9,7 @@ def most_frequent(string):
             
         else:
             D[i]=1
-    return D
-print (most_frequent("Missippi"))
+        sorted_dict = dict( sorted(D.items(), key=operator.itemgetter(1),reverse=True))
+        
+    return sorted_dict
+print (most_frequent("Mississippi"))
